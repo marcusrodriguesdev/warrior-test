@@ -23,3 +23,17 @@
 
 
     - Você será bem avaliado se usar Context API, Axio, Hooks, Formik, testes de comportamento e se você realizar um deploy em algum link. Além disso, vamos dar uma atenção maior quando demonstrar uma boa apresentação de design e uso de design patterns (como services, repositories, factories, builders e etc)
+
+--- 
+
+ - Desenvolvivdo por <a href="https://www.linkedin.com/in/marcusrodriguesdev/" target="_blank" rel="noreferrer"/>Marcus Rodrigues</a>.
+ - Tecnologias e Ferramentas Utilizadas:
+   - ReactJS.
+   - Material UI.
+   - Context Api.
+   - Local Storage.
+   - Git e Github
+   - Hooks
+ - Contato:
+   - <a href="https://www.linkedin.com/in/marcusrodriguesdev/" target="_blank" rel="noreferrer"/>Linkedin</a>
+   - email: marcus.rodrigues10@hotmail.com
