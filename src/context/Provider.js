@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Context from './Context';
+import questionsApi from '../services/questionsApi';
 
 function Provider({ children }) {
   const [quantity, setQuantity] = useState(0);
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function requestApi() {
+      const fetchApi = await questionsApi(quantity);
+      const { results } = fetchApi;
+      setData(results)
+    }
+    requestApi();
+  }, [quantity])
 
   const context = {
     quantity,
     setQuantity,
+    data,
   };
 
   return (
