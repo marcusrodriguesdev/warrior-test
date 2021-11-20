@@ -9,8 +9,7 @@ function Provider({ children }) {
   useEffect(() => {
     async function requestApi() {
       const fetchApi = await questionsApi(quantity);
-      const { results } = fetchApi;
-      setData(results)
+      setData(fetchApi)
     }
     requestApi();
   }, [quantity])

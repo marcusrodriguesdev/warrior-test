@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Provider from './context/Provider';
 import Home from './pages/Home';
-import Questions from './pages/Questions';
 import Start from './pages/Start';
+import Quiz from './pages/Quiz';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={ <Home /> }/>
           <Route path="/start" element={ <Start /> }/>
-          <Route path="/questions" element={ <Questions /> } />
+          <Route path="/quiz" element={ <Quiz /> } />
         </Routes>
       </BrowserRouter>
     </Provider>

@@ -18,7 +18,7 @@ function Start() {
       </button>
       <button
         type="button"
-        onClick={ () => navigate('/') }
+        onClick={ () => navigate('/quiz') }
       >
         Start
       </button>
