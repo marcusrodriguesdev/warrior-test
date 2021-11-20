@@ -15,6 +15,22 @@ function Quiz() {
     return navigate('/');
   }
 
+  function removeColor() {
+    const correct = document.querySelector('.correct');
+    correct.className = 'correct default';
+    correct.disabled = false;
+
+    const incorrect = document.querySelectorAll('.incorrect');
+    incorrect.forEach((item) => {
+      item.className = 'incorrect default';
+      item.disabled = false;
+      return item;
+    });
+
+    const btnNext = document.querySelector('#btn-next');
+    btnNext.className = 'notDisplay';
+  }
+
   return (
     <div>
       Questions
@@ -23,7 +39,10 @@ function Quiz() {
       <div>
         <button
           type="button"
-          onClick={ () => setQuestionNumber(questionNumber + 1) }
+          id="btn-next"
+          onClick={ () => { setQuestionNumber(questionNumber + 1) 
+            removeColor();
+          } }
         >
           Next
         </button>
