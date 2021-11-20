@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
+import Alternatives from '../../components/Alternatives';
 import Question from '../../components/Question';
 import Context from '../../context/Context';
 
@@ -18,6 +19,7 @@ function Quiz() {
     <div>
       Questions
       <Question questionNumber={ questionNumber } />
+      <Alternatives questionNumber={ questionNumber } />
       <div>
         <button
           type="button"
