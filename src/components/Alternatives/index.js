@@ -6,7 +6,16 @@ import './style.css';
 // import { Container } from './styles';
 
 function Alternatives({ questionNumber }) {
-  const { data: { results } } = useContext(Context);
+  const { 
+    data: { results }, score, setScore, error, setError
+  } = useContext(Context);
+
+  const {
+    correct_answer: correctAnswer,
+    incorrect_answers: incorrectAnswer,
+  } = results[questionNumber];
+  const answers = [correctAnswer, ...incorrectAnswer];
+  answers.sort();
 
   function applyColor() {
     const correct = document.querySelector('.correct');
@@ -24,14 +33,17 @@ function Alternatives({ questionNumber }) {
     btnNext.className = 'display';
   }
 
+  function calculateError() {
+    applyColor();
+    setError(error + 1);
+  }
+
+  function calculateScore() {
+    applyColor();
+    setScore(score + 1);
+  }
+
   function displayAnswer() {
-    const {
-      correct_answer: correctAnswer,
-      incorrect_answers: incorrectAnswer,
-    } = results[questionNumber];
-    const answers = [correctAnswer, ...incorrectAnswer];
-    answers.sort();
-    
     return (
       <div>
         {answers.map((answer, index, array) => {
@@ -41,11 +53,14 @@ function Alternatives({ questionNumber }) {
 
           return (
             <button
+              name={ answer }
               key={ index }
-              onClick={ () => applyColor() }
+              id="item"
+              onClick={ ({ target }) => 
+                target.name === correctAnswer ? calculateScore() : calculateError()
+              }
               type="button"
               className={ answer === correctAnswer ? 'correct' : 'incorrect' }
-              name={ answer }
             >
               { decode(answer) }
             </button>
