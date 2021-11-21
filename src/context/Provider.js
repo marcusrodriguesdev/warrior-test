@@ -5,6 +5,8 @@ import questionsApi from '../services/questionsApi';
 function Provider({ children }) {
   const [quantity, setQuantity] = useState(0);
   const [data, setData] = useState([]);
+  const [score, setScore] = useState(0);
+  const [error, setError] = useState(0);
 
   useEffect(() => {
     async function requestApi() {
@@ -18,6 +20,10 @@ function Provider({ children }) {
     quantity,
     setQuantity,
     data,
+    score,
+    setScore,
+    error,
+    setError,
   };
 
   return (

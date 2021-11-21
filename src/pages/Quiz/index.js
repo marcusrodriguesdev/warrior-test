@@ -8,12 +8,9 @@ import Context from '../../context/Context';
 
 function Quiz() {
   const [questionNumber, setQuestionNumber] = useState(0);
-  const { quantity } = useContext(Context);
+  const { quantity, score, error } = useContext(Context);
   const navigate = useNavigate()
-
-  if (questionNumber >= quantity) {
-    return navigate('/');
-  }
+  const btnNext = document.querySelector('#btn-next');
 
   function removeColor() {
     const correct = document.querySelector('.correct');
@@ -27,22 +24,38 @@ function Quiz() {
       return item;
     });
 
-    const btnNext = document.querySelector('#btn-next');
     btnNext.className = 'notDisplay';
+  }
+
+  function showNextQuestion() {
+    const LIMIT = quantity - 1;
+    console.log(quantity);
+    removeColor();
+    if (questionNumber === LIMIT) {
+      navigate('/feedback');
+      localStorage.setItem('ranking', JSON.stringify({
+        player: {
+          score,
+          error,
+        }
+      }));
+    } else {
+      setQuestionNumber(questionNumber + 1);
+    }
   }
 
   return (
     <div>
-      Questions
       <Question questionNumber={ questionNumber } />
-      <Alternatives questionNumber={ questionNumber } />
+      <Alternatives 
+        questionNumber={ questionNumber }
+      />
       <div>
         <button
           type="button"
           id="btn-next"
-          onClick={ () => { setQuestionNumber(questionNumber + 1) 
-            removeColor();
-          } }
+          onClick={ () => showNextQuestion() }
+          className="notDisplay"
         >
           Next
         </button>

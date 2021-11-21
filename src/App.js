@@ -4,6 +4,7 @@ import Provider from './context/Provider';
 import Home from './pages/Home';
 import Start from './pages/Start';
 import Quiz from './pages/Quiz';
+import Feedback from './pages/Feedback';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={ <Home /> }/>
           <Route path="/start" element={ <Start /> }/>
           <Route path="/quiz" element={ <Quiz /> } />
+          <Route path="/feedback" element={ <Feedback /> } />
         </Routes>
       </BrowserRouter>
     </Provider>
