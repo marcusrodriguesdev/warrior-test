@@ -33,9 +33,11 @@ function Quiz() {
     removeColor();
     if (questionNumber === LIMIT) {
       navigate('/feedback');
-      localStorage.setItem('player', JSON.stringify({
-        score,
-        error,
+      localStorage.setItem('ranking', JSON.stringify({
+        player: {
+          score,
+          error,
+        }
       }));
     } else {
       setQuestionNumber(questionNumber + 1);
