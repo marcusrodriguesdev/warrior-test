@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Context from '../../context/Context';
-import decode from '../../GlobalFunc/decode';
+import decode from '../../global/decode';
 
 // import { Container } from './styles';
 
