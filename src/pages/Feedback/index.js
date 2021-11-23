@@ -1,28 +1,26 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import GlobalStyle from '../../styles/GlobalStyle';
+import { Container } from './styles';
 
 function Feedback() {
   const ranking = JSON.parse(localStorage.getItem('ranking'));
   const { error, score } = ranking.player;
-  console.log(error);
-  console.log(score);
   return (
-    <div>
-      FeedBack
-      <div>
+    <Container>
+      <GlobalStyle />
+      <div className="hits">
         <h3>
-          your number of hits: 
-          { ` ${score}` }
+          Your number of hits: 
         </h3>
+        <h2>{score}</h2>
       </div>
-      <div>
+      <div className="error">
         <h3>
-          your number of errors:
-          { ` ${error}` }
+          Your number of errors:
         </h3>
+        <h2>{error}</h2>
       </div>
-    </div>
+    </Container>
   );
 }
 
