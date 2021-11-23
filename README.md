@@ -28,12 +28,13 @@
 
  - Desenvolvivdo por <a href="https://www.linkedin.com/in/marcusrodriguesdev/" target="_blank" rel="noreferrer"/>Marcus Rodrigues</a>.
  - Tecnologias e Ferramentas Utilizadas:
-   - ReactJS.
-   - Material UI.
-   - Context Api.
-   - Local Storage.
-   - Git e Github
-   - Hooks
+   - ReactJS;
+   - Material UI;
+   - Styled Components;
+   - Context Api;
+   - Local Storage;
+   - Git e Github;
+   - Hooks;
  - Contato:
    - <a href="https://www.linkedin.com/in/marcusrodriguesdev/" target="_blank" rel="noreferrer"/>Linkedin</a>
    - email: marcus.rodrigues10@hotmail.com
