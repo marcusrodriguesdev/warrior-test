@@ -30,7 +30,6 @@ function Quiz() {
 
   function showNextQuestion() {
     const LIMIT = quantity - 1;
-    console.log(quantity);
     removeColor();
     if (questionNumber === LIMIT) {
       navigate('/feedback');

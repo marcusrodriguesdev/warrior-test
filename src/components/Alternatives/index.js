@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import Context from '../../context/Context';
 import decode from '../../global/decode';
-import './style.css';
+// import './style.css';
 
-// import { Container } from './styles';
+import { Container } from './styles';
 
 function Alternatives({ questionNumber }) {
   const { 
@@ -71,9 +71,9 @@ function Alternatives({ questionNumber }) {
   }
 
   return (
-    <div>
+    <Container>
       { displayAnswer() }
-    </div>
+    </Container>
   );
 }
 
