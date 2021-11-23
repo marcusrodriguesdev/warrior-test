@@ -51,15 +51,17 @@ function Quiz() {
       <Alternatives 
         questionNumber={ questionNumber }
       />
-      <div>
-        <button
-          type="button"
-          id="btn-next"
-          onClick={ () => showNextQuestion() }
-          className="notDisplay"
-        >
-          Next
-        </button>
+      <div className="box-button">
+        <div>
+          <button
+            type="button"
+            id="btn-next"
+            onClick={ () => showNextQuestion() }
+            className="notDisplay"
+          >
+            Next
+          </button>
+        </div>
       </div>
     </div>
   );
