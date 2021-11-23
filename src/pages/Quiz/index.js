@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import Alternatives from '../../components/Alternatives';
 import Question from '../../components/Question';
 import Context from '../../context/Context';
+import GlobalStyle from '../../styles/GlobalStyle';
 
 // import { Container } from './styles';
 
@@ -29,7 +30,6 @@ function Quiz() {
 
   function showNextQuestion() {
     const LIMIT = quantity - 1;
-    console.log(quantity);
     removeColor();
     if (questionNumber === LIMIT) {
       navigate('/feedback');
@@ -46,6 +46,7 @@ function Quiz() {
 
   return (
     <div>
+      <GlobalStyle />
       <Question questionNumber={ questionNumber } />
       <Alternatives 
         questionNumber={ questionNumber }
